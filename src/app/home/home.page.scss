@@ -1,0 +1,69 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.welcome-text {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--ion-color-micolor-contrast); /* Texto que contraste con el color principal */
+}
+
+ion-menu {
+  --background: var(--ion-color-fondo); /* Fondo del menú con el color "fondo" */
+}
+
+ion-content {
+  --background: var(--ion-color-fondo); /* Fondo principal con el color "fondo" */
+}
+
+ion-toolbar {
+  --background: var(--ion-color-primary); /* Encabezado con el color "primary" */
+}
+
+.menu-option {
+  --ion-item-background: var(--ion-color-fondo); /* Fondo de cada opción */
+  color: var(--ion-color-dark); /* Color de texto dark */
+}
+
+ion-item {
+  --color: var(--ion-color-dark); /* Color de las letras del menú */
+}
+
+ion-menu-button {
+  margin-left: 10px;
+}

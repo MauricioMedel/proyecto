@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="regresar()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Lista de Proveedores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
+  <ion-card *ngFor="let proveedor of proveedores" style="background-color: var(--ion-color-fondo); margin: 10px;">
+    <ion-card-header>
+      <ion-card-title style="color: var(--ion-color-dark);">{{ proveedor.nombre }} {{ proveedor.apellidoPaterno }} {{ proveedor.apellidoMaterno }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="color: var(--ion-color-dark);">
+      <p><strong>Calle:</strong> {{ proveedor.calle }}</p>
+      <p><strong>Estado:</strong> {{ proveedor.estado }}</p>
+      <p><strong>Código Postal:</strong> {{ proveedor.codigoPostal }}</p>
+      <p><strong>Teléfono:</strong> {{ proveedor.telefono }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

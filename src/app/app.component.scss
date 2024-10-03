@@ -1,0 +1,24 @@
+ion-menu {
+  --background: var(--ion-color-fondo); /* Fondo del menú con el color "fondo" */
+}
+
+ion-content {
+  --background: var(--ion-color-fondo); /* Fondo del contenido del menú */
+}
+
+ion-toolbar {
+  --background: var(--ion-color-primary); /* Encabezado con el color "primary" */
+}
+
+ion-item {
+  --color: var(--ion-color-dark); /* Color de las letras del menú */
+  --ion-item-background: var(--ion-color-fondo); /* Fondo de cada opción */
+}
+
+.menu-option {
+  --background: var(--ion-color-fondo); /* Asegurando que las opciones del menú tengan fondo "fondo" */
+}
+
+ion-menu-button {
+  margin-left: 10px;
+}

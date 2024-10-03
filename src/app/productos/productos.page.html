@@ -1,0 +1,46 @@
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Productos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
+    <!-- Tarjeta para Registrar Producto -->
+    <ion-card style="background-color: var(--ion-color-fondo);">
+      <ion-card-header>
+        <ion-card-title style="color: var(--ion-color-dark);">Registrar Producto</ion-card-title>
+      </ion-card-header>
+      <ion-card-content style="color: var(--ion-color-dark);">
+        Agrega un nuevo producto ingresando los datos requeridos.
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Tarjeta para Ver Almacén -->
+    <ion-card style="background-color: var(--ion-color-fondo);">
+      <ion-card-header>
+        <ion-card-title style="color: var(--ion-color-dark);">Ver Almacén</ion-card-title>
+      </ion-card-header>
+      <ion-card-content style="color: var(--ion-color-dark);">
+        Consulta el inventario de productos disponibles en el almacén.
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-app>
+
+<style>
+  ion-card {
+    margin: 10px;
+    cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+    --background: var(--ion-color-fondo); /* Asegura que el fondo de la tarjeta sea color "fondo" */
+  }
+
+  /* Estilo para el texto en color oscuro */
+  ion-card-title,
+  ion-card-content {
+    color: var(--ion-color-dark); /* Asegúrate de que el texto esté en color oscuro */
+  }
+</style>

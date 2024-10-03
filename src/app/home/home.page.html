@@ -1,0 +1,71 @@
+<ion-app>
+  
+  <!-- Contenido principal -->
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar color="primary"> <!-- Barra superior con color primario -->
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content style="background-color: var(--ion-color-fondo);"> <!-- Fondo principal con el color "fondo" -->
+      <div class="logo-container">
+        <img src="assets/img/logo_farmacia.png" alt="Logo de la Farmacia" class="logo">
+      </div>
+
+      <!-- Opciones como botones -->
+      <ion-card (click)="navigateTo('proveedores')" style="background-color: var(--ion-color-fondo);">
+        <ion-card-header>
+          <ion-card-title style="color: var(--ion-color-dark);">Proveedores</ion-card-title>
+        </ion-card-header>
+        <ion-card-content style="color: var(--ion-color-dark);">
+          Gestiona tus proveedores.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card (click)="navigateTo('orden-compra')" style="background-color: var(--ion-color-fondo);">
+        <ion-card-header>
+          <ion-card-title style="color: var(--ion-color-dark);">Orden de Compra</ion-card-title>
+        </ion-card-header>
+        <ion-card-content style="color: var(--ion-color-dark);">
+          Realiza tus órdenes de compra.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card (click)="navigateTo('productos')" style="background-color: var(--ion-color-fondo);">
+        <ion-card-header>
+          <ion-card-title style="color: var(--ion-color-dark);">Productos</ion-card-title>
+        </ion-card-header>
+        <ion-card-content style="color: var(--ion-color-dark);">
+          Visualiza y gestiona tus productos.
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </div>
+</ion-app>
+
+<style>
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    width: 80%;
+    max-width: 200px;
+  }
+
+  ion-card {
+    margin: 10px;
+    cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+  }
+
+  /* Estilo para el texto en color oscuro */
+  ion-card-title,
+  ion-card-content {
+    color: var(--ion-color-dark); /* Asegúrate de que el texto esté en color oscuro */
+  }
+</style>
