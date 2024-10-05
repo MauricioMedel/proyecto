@@ -10,7 +10,7 @@
 
   <ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
     <!-- Tarjeta para Registrar Producto -->
-    <ion-card style="background-color: var(--ion-color-fondo);">
+    <ion-card style="background-color: var(--ion-color-fondo);" (click)="registrarProducto()">
       <ion-card-header>
         <ion-card-title style="color: var(--ion-color-dark);">Registrar Producto</ion-card-title>
       </ion-card-header>
@@ -20,7 +20,7 @@
     </ion-card>
 
     <!-- Tarjeta para Ver Almacén -->
-    <ion-card style="background-color: var(--ion-color-fondo);">
+    <ion-card style="background-color: var(--ion-color-fondo);" (click)="verAlmacen()">
       <ion-card-header>
         <ion-card-title style="color: var(--ion-color-dark);">Ver Almacén</ion-card-title>
       </ion-card-header>
@@ -30,17 +30,3 @@
     </ion-card>
   </ion-content>
 </ion-app>
-
-<style>
-  ion-card {
-    margin: 10px;
-    cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
-    --background: var(--ion-color-fondo); /* Asegura que el fondo de la tarjeta sea color "fondo" */
-  }
-
-  /* Estilo para el texto en color oscuro */
-  ion-card-title,
-  ion-card-content {
-    color: var(--ion-color-dark); /* Asegúrate de que el texto esté en color oscuro */
-  }
-</style>
