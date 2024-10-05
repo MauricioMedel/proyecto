@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'ordenes', // Ruta para la página de Historial de Órdenes
     loadChildren: () => import('./ordenes/ordenes.module').then(m => m.OrdenesPageModule)
   },
+  {
+    path: 'almacen',
+    loadChildren: () => import('./almacen/almacen.module').then( m => m.AlmacenPageModule)
+  },
 ];
 
 @NgModule({
