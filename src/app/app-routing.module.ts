@@ -44,12 +44,12 @@ const routes: Routes = [
     loadChildren: () => import('./ordenes/ordenes.module').then(m => m.OrdenesPageModule)
   },
   {
-    path: 'almacen',
-    loadChildren: () => import('./almacen/almacen.module').then( m => m.AlmacenPageModule)
+    path: 'almacen', // Ruta para la página de Almacén
+    loadChildren: () => import('./almacen/almacen.module').then(m => m.AlmacenPageModule)
   },
   {
-    path: 'registro-producto',
-    loadChildren: () => import('./registro-producto/registro-producto.module').then( m => m.RegistroProductoPageModule)
+    path: 'registro-producto', // Ruta para la página de Registro de Producto
+    loadChildren: () => import('./registro-producto/registro-producto.module').then(m => m.RegistroProductoPageModule)
   },
 ];
 
