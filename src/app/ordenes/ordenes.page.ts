@@ -35,7 +35,7 @@ export class OrdenesPage {
   }
 
   // Método para navegar al registro de proveedor (si lo necesitas)
-  navigateToRegistroProveedor() {
+  navigateToAgregarOrden() {
     this.router.navigate(['/generar-orden']);
   }
 }
