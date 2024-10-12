@@ -19,6 +19,6 @@ export class OrdenCompraPage implements OnInit {
 
   // Función para navegar al historial de órdenes
   historialOrdenes() {
-    this.router.navigate(['/ordenes']); // Redirige a la página 'ordenes'
+    this.router.navigate(['/home']); // Redirige a la página 'ordenes'
   }
 }
