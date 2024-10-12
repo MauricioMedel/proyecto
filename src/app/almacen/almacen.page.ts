@@ -14,8 +14,17 @@ export class AlmacenPage {
     // Añade más productos según sea necesario
   ];
 
+  
+
   // Inyecta NavController en el constructor
   constructor(private navCtrl: NavController) { }
+      
+  // Agrega esta función para manejar el clic en el botón flotante
+  navigateToAgregarProducto() {
+    // Aquí puedes definir la lógica para navegar a la página de agregar productos
+    // Por ejemplo, usando NavController si estás navegando a otra página
+    this.navCtrl.navigateForward('/registro-producto');
+  }
 
   // Método para regresar a la página de productos
   regresar() {
