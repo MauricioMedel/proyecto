@@ -19,6 +19,6 @@ export class AlmacenPage {
 
   // Método para regresar a la página de productos
   regresar() {
-    this.navCtrl.navigateBack('/productos'); // Utiliza navigateBack para regresar a la página de productos
+    this.navCtrl.navigateBack('/home'); // Utiliza navigateBack para regresar a la página de productos
   }
 }

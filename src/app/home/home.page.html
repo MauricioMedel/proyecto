@@ -18,30 +18,58 @@
         <ion-datetime display-format="DD/MM/YYYY" placeholder="Selecciona una fecha"></ion-datetime>
       </div>
 
-      <ion-card (click)="navigateTo('proveedores')" class="custom-card">
-        <ion-card-header>
-          <ion-card-title>Proveedores</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          Gestiona tus proveedores.
-        </ion-card-content>
-      </ion-card>
+      <!-- Selección de Mes -->
+<div class="month-selector custom-month-selector">
+  <ion-label>Selecciona un mes:</ion-label>
+  <ion-select id="monthSelect" (ionChange)="updateTable($event)">
+    <ion-select-option value="01">Enero</ion-select-option>
+    <ion-select-option value="02">Febrero</ion-select-option>
+    <ion-select-option value="03">Marzo</ion-select-option>
+    <ion-select-option value="04">Abril</ion-select-option>
+    <ion-select-option value="05">Mayo</ion-select-option>
+    <ion-select-option value="06">Junio</ion-select-option>
+    <ion-select-option value="07">Julio</ion-select-option>
+    <ion-select-option value="08">Agosto</ion-select-option>
+    <ion-select-option value="09">Septiembre</ion-select-option>
+    <ion-select-option value="10">Octubre</ion-select-option>
+    <ion-select-option value="11">Noviembre</ion-select-option>
+    <ion-select-option value="12">Diciembre</ion-select-option>
+  </ion-select>
+</div>
 
-      <ion-card (click)="navigateTo('orden-compra')" class="custom-card">
-        <ion-card-header>
-          <ion-card-title>Orden de Compra</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          Realiza tus órdenes de compra.
-        </ion-card-content>
-      </ion-card>
 
-      <ion-card (click)="navigateTo('productos')" class="custom-card">
+      <!-- Estadísticas de Órdenes de Compra -->
+      <ion-card class="custom-card">
         <ion-card-header>
-          <ion-card-title>Productos</ion-card-title>
+          <ion-card-title>Estadísticas de Órdenes de Compra</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          Visualiza y gestiona tus productos.
+          <table style="width: 100%; border-collapse: collapse;" id="ordersTable">
+            <thead>
+              <tr>
+                <th style="border: 1px solid #ccc; padding: 8px;">Semana</th>
+                <th style="border: 1px solid #ccc; padding: 8px;">Importe Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Semana 1</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">$500</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Semana 2</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">$750</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Semana 3</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">$600</td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Semana 4</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">$800</td>
+              </tr>
+            </tbody>
+          </table>
         </ion-card-content>
       </ion-card>
     </ion-content>
@@ -66,18 +94,25 @@
     margin-bottom: 20px;
   }
 
+  .month-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
   .custom-card {
     margin: 15px;
     padding: 20px;
     background-color: var(--ion-color-fondo);
     border-radius: 15px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Suaviza el borde */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     cursor: pointer;
   }
 
   .custom-card:hover {
-    transform: scale(1.05); /* Hace que los botones crezcan ligeramente al pasar el mouse */
+    transform: scale(1.05);
   }
 
   ion-card-title {
