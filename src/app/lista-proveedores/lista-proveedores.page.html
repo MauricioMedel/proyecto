@@ -6,33 +6,35 @@
       </ion-button>
     </ion-buttons>
     <ion-title>Lista de Proveedores</ion-title>
-
-  
-    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
 
-  
   <ion-card *ngFor="let proveedor of proveedores" style="background-color: var(--ion-color-fondo); margin: 10px;">
     <ion-card-header>
-      <ion-card-title style="color: var(--ion-color-dark);">{{ proveedor.nombre }} {{ proveedor.apellidoPaterno }} {{ proveedor.apellidoMaterno }}</ion-card-title>
+      <ion-card-title style="color: var(--ion-color-dark);">{{ proveedor.nombre }}</ion-card-title>
+      <ion-card-subtitle style="color: var(--ion-color-dark);">Teléfono: {{ proveedor.telefono }}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content style="color: var(--ion-color-dark);">
-      <p><strong>Calle:</strong> {{ proveedor.calle }}</p>
-      <p><strong>Estado:</strong> {{ proveedor.estado }}</p>
-      <p><strong>Código Postal:</strong> {{ proveedor.codigoPostal }}</p>
-      <p><strong>Teléfono:</strong> {{ proveedor.telefono }}</p>
+      <ion-button expand="full" (click)="toggleDetails(proveedor)">Detalles</ion-button>
+
+      <!-- Información adicional, inicialmente oculta -->
+      <div *ngIf="proveedor.showDetails" style="margin-top: 10px;">
+        <p><strong>ID:</strong> {{ proveedor.id }}</p>
+        <p><strong>Calle:</strong> {{ proveedor.calle }}</p>
+        <p><strong>Estado:</strong> {{ proveedor.estado }}</p>
+        <p><strong>Código Postal:</strong> {{ proveedor.codigoPostal }}</p>
+        <p><strong>Teléfono:</strong> {{ proveedor.telefono }}</p>
+      </div>
     </ion-card-content>
   </ion-card>
 
-
- <!-- Botón flotante (FAB) en la esquina inferior derecha -->
- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button (click)="navigateToRegistroProveedor()">
-    <ion-icon name="add"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
+  <!-- Botón flotante (FAB) en la esquina inferior derecha -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="navigateToRegistroProveedor()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>
