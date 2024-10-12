@@ -7,16 +7,14 @@
     </ion-buttons>
     <ion-title>Lista de Proveedores</ion-title>
 
-    <!-- Botón con el ícono de "+" -->
-    <ion-buttons slot="end">
-      <ion-button (click)="navigateToRegistroProveedor()">
-        <ion-icon slot="icon-only" name="add"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+  
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
+
+  
   <ion-card *ngFor="let proveedor of proveedores" style="background-color: var(--ion-color-fondo); margin: 10px;">
     <ion-card-header>
       <ion-card-title style="color: var(--ion-color-dark);">{{ proveedor.nombre }} {{ proveedor.apellidoPaterno }} {{ proveedor.apellidoMaterno }}</ion-card-title>
@@ -28,4 +26,13 @@
       <p><strong>Teléfono:</strong> {{ proveedor.telefono }}</p>
     </ion-card-content>
   </ion-card>
+
+
+ <!-- Botón flotante (FAB) en la esquina inferior derecha -->
+ <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="navigateToRegistroProveedor()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
 </ion-content>

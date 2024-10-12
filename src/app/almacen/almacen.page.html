@@ -10,6 +10,16 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
+
+  
+
+  <!-- Botón flotante (FAB) en la esquina inferior derecha -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="navigateToAgregarProducto()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
   <ion-card *ngFor="let producto of productos" style="background-color: var(--ion-color-fondo); margin: 10px;">
     <ion-card-header>
       <ion-card-title style="color: var(--ion-color-dark);">{{ producto.nombre }}</ion-card-title>
@@ -21,4 +31,5 @@
       <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
     </ion-card-content>
   </ion-card>
+
 </ion-content>

@@ -20,7 +20,10 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-button (click)="navigateToRegistroProveedor()">
-    <ion-icon name="add"></ion-icon> Añadir 
-  </ion-button>
+  <!-- Botón flotante (FAB) en la esquina inferior derecha -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="navigateToAgregarOrden()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
