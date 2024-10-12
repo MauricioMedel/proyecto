@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-header [translucent]="true">
+  <ion-header [translucent]="true" style="background-color: var(--ion-color-fondo);">
     <ion-toolbar color="primary">
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
@@ -10,45 +10,60 @@
 
   <ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
     <!-- Historial de ventas -->
-    <ion-list>
+    <ion-list style="background-color: var(--ion-color-fondo);">
       <!-- Ejemplo de producto 1 -->
-      <ion-item>
-        <ion-label>
-          <h3 style="color: var(--ion-color-dark); font-size: 1.2em;">Folio: 001</h3>
-          <h3 style="color: var(--ion-color-medium); font-size: 1em;">Fecha: 12/10/2024</h3>
-          <h2 style="color: var(--ion-color-dark); font-size: 1.1em;">Paracetamol 500mg</h2>
-          <p style="color: var(--ion-color-medium); font-size: 0.9em;">Total Vendidos: 120</p>
-          <p style="color: var(--ion-color-medium); font-size: 0.9em;">Total: $600.00</p>
-        </ion-label>
-      </ion-item>
+      <ion-card style="background-color: var(--ion-color-fondo); margin-bottom: 15px;">
+        <ion-card-content>
+          <ion-label>
+            <h3 style="color: var(--ion-color-dark); font-size: 1.2em;">Folio: 001</h3>
+            <h3 style="color: var(--ion-color-dark); font-size: 1em;">Fecha: 12/10/2024</h3>
+            <h2 style="color: var(--ion-color-dark); font-size: 1.1em;">Paracetamol 500mg</h2>
+            <p style="color: var(--ion-color-dark); font-size: 0.9em;">Total Vendidos: 120</p>
+            <p style="color: var(--ion-color-dark); font-size: 0.9em;">Total: $600.00</p>
+          </ion-label>
+        </ion-card-content>
+      </ion-card>
 
       <!-- Ejemplo de producto 2 -->
-      <ion-item>
-        <ion-label>
-          <h3 style="color: var(--ion-color-dark); font-size: 1.2em;">Folio: 002</h3>
-          <h3 style="color: var(--ion-color-medium); font-size: 1em;">Fecha: 10/10/2024</h3>
-          <h2 style="color: var(--ion-color-dark); font-size: 1.1em;">Ibuprofeno 400mg</h2>
-          <p style="color: var(--ion-color-medium); font-size: 0.9em;">Total Vendidos: 75</p>
-          <p style="color: var(--ion-color-medium); font-size: 0.9em;">Total: $375.00</p>
-        </ion-label>
-      </ion-item>
+      <ion-card style="background-color: var(--ion-color-fondo); margin-bottom: 15px;">
+        <ion-card-content>
+          <ion-label>
+            <h3 style="color: var(--ion-color-dark); font-size: 1.2em;">Folio: 002</h3>
+            <h3 style="color: var(--ion-color-dark); font-size: 1em;">Fecha: 10/10/2024</h3>
+            <h2 style="color: var(--ion-color-dark); font-size: 1.1em;">Ibuprofeno 400mg</h2>
+            <p style="color: var(--ion-color-dark); font-size: 0.9em;">Total Vendidos: 75</p>
+            <p style="color: var(--ion-color-dark); font-size: 0.9em;">Total: $375.00</p>
+          </ion-label>
+        </ion-card-content>
+      </ion-card>
 
       <!-- Ejemplo de producto 3 -->
-      <ion-item>
-        <ion-label>
-          <h3 style="color: var(--ion-color-dark); font-size: 1.2em;">Folio: 003</h3>
-          <h3 style="color: var(--ion-color-medium); font-size: 1em;">Fecha: 08/10/2024</h3>
-          <h2 style="color: var(--ion-color-dark); font-size: 1.1em;">Amoxicilina 500mg</h2>
-          <p style="color: var(--ion-color-medium); font-size: 0.9em;">Total Vendidos: 45</p>
-          <p style="color: var(--ion-color-medium); font-size: 0.9em;">Total: $450.00</p>
-        </ion-label>
-      </ion-item>
+      <ion-card style="background-color: var(--ion-color-fondo); margin-bottom: 15px;">
+        <ion-card-content>
+          <ion-label>
+            <h3 style="color: var(--ion-color-dark); font-size: 1.2em;">Folio: 003</h3>
+            <h3 style="color: var(--ion-color-dark); font-size: 1em;">Fecha: 08/10/2024</h3>
+            <h2 style="color: var(--ion-color-dark); font-size: 1.1em;">Amoxicilina 500mg</h2>
+            <p style="color: var(--ion-color-dark); font-size: 0.9em;">Total Vendidos: 45</p>
+            <p style="color: var(--ion-color-dark); font-size: 0.9em;">Total: $450.00</p>
+          </ion-label>
+        </ion-card-content>
+      </ion-card>
     </ion-list>
   </ion-content>
 </ion-app>
 
 <style>
-  ion-item {
+  ion-header {
+    background-color: var(--ion-color-fondo);
+  }
+
+  ion-list {
+    background-color: var(--ion-color-fondo);
+  }
+
+  ion-card {
+    background-color: var(--ion-color-fondo);
     margin-bottom: 15px;
   }
 
