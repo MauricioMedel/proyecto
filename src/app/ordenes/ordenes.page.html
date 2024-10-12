@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-button (click)="goBack()">
+      <ion-button (click)="goBack()"> <!-- Cambia 'regresar()' por 'goBack()' -->
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -10,7 +10,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
-  <div style="padding: 20px;">
-    <!-- Puedes agregar contenido adicional aquí más adelante -->
-  </div>
+  <ion-card *ngFor="let orden of ordenes" style="background-color: var(--ion-color-fondo); margin: 10px;">
+    <ion-card-header>
+      <ion-card-title style="color: var(--ion-color-dark);">{{ orden.proveedor }}</ion-card-title>
+      <ion-card-subtitle style="color: var(--ion-color-dark);">{{ orden.fecha }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content style="color: var(--ion-color-dark);">
+      <p><strong>Total:</strong> ${{ orden.total | number:'1.2-2' }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button (click)="navigateToRegistroProveedor()">
+    <ion-icon name="add"></ion-icon> Añadir 
+  </ion-button>
 </ion-content>

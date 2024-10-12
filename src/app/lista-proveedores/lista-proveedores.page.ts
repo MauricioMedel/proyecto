@@ -34,6 +34,11 @@ export class ListaProveedoresPage implements OnInit {
   }
 
   regresar() {
-    this.router.navigate(['/proveedores']);
+    this.router.navigate(['/home']);
   }
+
+  navigateToRegistroProveedor() {
+    this.router.navigate(['/registro-proveedor']);
+  }
+
 }

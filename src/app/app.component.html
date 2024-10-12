@@ -8,10 +8,10 @@
     </ion-header>
     <ion-content style="background-color: var(--ion-color-fondo);"> <!-- Fondo del menú con el color "fondo" -->
       <ion-list>
-        <ion-item class="menu-option" routerLink="/home" style="color: var(--ion-color-dark);">Inicio</ion-item>
-        <ion-item class="menu-option" routerLink="/proveedores" style="color: var(--ion-color-dark);">Proveedores</ion-item>
-        <ion-item class="menu-option" routerLink="/orden-compra" style="color: var(--ion-color-dark);">Orden de Compra</ion-item>
-        <ion-item class="menu-option" routerLink="/productos" style="color: var(--ion-color-dark);">Productos</ion-item>
+        <ion-item class="menu-option" routerLink="/home" (click)="closeMenu()" style="color: var(--ion-color-dark);">Inicio</ion-item>
+        <ion-item class="menu-option" routerLink="/lista-proveedores" (click)="closeMenu()" style="color: var(--ion-color-dark);">Proveedores</ion-item>
+        <ion-item class="menu-option" routerLink="/ordenes" (click)="closeMenu()" style="color: var(--ion-color-dark);">Orden de Compra</ion-item>
+        <ion-item class="menu-option" routerLink="/productos" (click)="closeMenu()" style="color: var(--ion-color-dark);">Productos</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
