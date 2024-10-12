@@ -19,7 +19,7 @@ export class HomePage {
   }
 
   goToVentaProducto() {
-    this.router.navigate(['/registro-venta']);
+    this.router.navigate(['/registro-ventas']);
   }
 
   goToGenerarOrden() {

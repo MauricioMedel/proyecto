@@ -35,7 +35,7 @@ export class RegistroProductoPage implements OnInit {
           text: 'Sí',
           handler: () => {
             this.limpiarFormulario();
-            this.router.navigate(['/productos']);
+            this.router.navigate(['/almacen']);
           }
         }
       ]
@@ -64,7 +64,7 @@ export class RegistroProductoPage implements OnInit {
 
     await alert.present();
     this.limpiarFormulario();
-    this.router.navigate(['/productos']);
+    this.router.navigate(['/almacen']);
   }
 
   limpiarFormulario() {
