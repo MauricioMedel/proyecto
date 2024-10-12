@@ -50,7 +50,11 @@ const routes: Routes = [
   {
     path: 'registro-producto', // Ruta para la página de Registro de Producto
     loadChildren: () => import('./registro-producto/registro-producto.module').then(m => m.RegistroProductoPageModule)
+  },  {
+    path: 'ventas',
+    loadChildren: () => import('./ventas/ventas.module').then( m => m.VentasPageModule)
   },
+
 ];
 
 @NgModule({
