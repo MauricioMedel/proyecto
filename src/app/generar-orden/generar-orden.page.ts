@@ -31,7 +31,7 @@ export class GenerarOrdenPage implements OnInit {
 
     await alert.present();
     this.limpiarFormulario();
-    this.router.navigate(['/orden-compra']);
+    this.router.navigate(['/ordenes']);
   }
 
   async cancelOrder() {
@@ -47,7 +47,7 @@ export class GenerarOrdenPage implements OnInit {
           text: 'Sí',
           handler: () => {
             this.limpiarFormulario();
-            this.router.navigate(['/orden-compra']);
+            this.router.navigate(['/ordenes']);
           }
         }
       ]

@@ -68,7 +68,7 @@ export class RegistroProveedorPage implements OnInit {
 
     await alert.present();
     this.limpiarFormulario();
-    this.router.navigate(['/proveedores']);
+    this.router.navigate(['/lista-proveedores']);
   }
 
   limpiarFormulario() {
