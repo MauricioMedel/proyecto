@@ -11,7 +11,7 @@ export class LoginPage implements OnInit {
 
   username: string = ''; // Campo para el nombre de usuario
   password: string = ''; // Campo para la contraseña
-  passwordType: string = 'password'; // Tipo inicial de la contraseña
+  passwordType: string = 'password'; // Tipo inicial de la contraseña (oculta)
 
   constructor(
     private router: Router, // Servicio de navegación para redirigir al dashboard
@@ -37,7 +37,7 @@ export class LoginPage implements OnInit {
   }
 
   // Método para alternar la visibilidad de la contraseña
-  togglePasswordVisibility() {
-    this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
+  togglePasswordVisibility(event: any) {
+    this.passwordType = event.detail.checked ? 'text' : 'password';
   }
 }

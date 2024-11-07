@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Inicio de Sesión</ion-title>
+    <ion-title class="ion-text-center">Inicio de sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -33,12 +33,16 @@
               autocomplete="current-password"
               class="black-text"
             ></ion-input>
-            <ion-icon 
-              [name]="passwordType === 'password' ? 'eye-off' : 'eye'"
-              slot="end"
-              (click)="togglePasswordVisibility()"
-              style="cursor: pointer;"
-            ></ion-icon>
+          </ion-item>
+
+          <!-- Casilla de verificación para mostrar/ocultar contraseña -->
+          <ion-item lines="none" color="fondo">
+            <ion-label>Mostrar contraseña</ion-label>
+            <ion-checkbox 
+              slot="start" 
+              (ionChange)="togglePasswordVisibility($event)"
+              class="custom-checkbox"
+            ></ion-checkbox>
           </ion-item>
 
           <ion-button
@@ -63,19 +67,19 @@
     align-items: center;
     height: 100%;
     padding: 20px;
-    background-color: var(--ion-color-light); /* Fondo claro para el contenedor */
+    background-color: var(--ion-color-light);
   }
 
   ion-card {
     width: 100%;
-    max-width: 400px; /* Ancho máximo para la tarjeta */
-    text-align: center; /* Centrar texto e imagen dentro de la tarjeta */
+    max-width: 400px;
+    text-align: center;
   }
 
   .logo {
-    width: 80%; /* Ajustar el tamaño del logo */
-    max-width: 200px; /* Ancho máximo para la imagen */
-    margin-bottom: 20px; /* Espacio entre la imagen y el formulario */
+    width: 80%;
+    max-width: 200px;
+    margin-bottom: 20px;
   }
 
   .input-item {
@@ -84,8 +88,9 @@
     border-radius: 5px; 
   }
 
-  /* Cambiar el color del texto ingresado a negro */
   .black-text {
-    --color: black; /* Cambia el color del texto dentro del input a negro */
+    --color: black;
   }
+
+
 </style>

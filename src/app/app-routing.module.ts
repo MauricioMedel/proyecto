@@ -50,7 +50,8 @@ const routes: Routes = [
   {
     path: 'registro-producto', // Ruta para la página de Registro de Producto
     loadChildren: () => import('./registro-producto/registro-producto.module').then(m => m.RegistroProductoPageModule)
-  },  {
+  },
+  {
     path: 'ventas',
     loadChildren: () => import('./ventas/ventas.module').then( m => m.VentasPageModule)
   },
@@ -58,7 +59,10 @@ const routes: Routes = [
     path: 'registro-ventas',
     loadChildren: () => import('./registro-ventas/registro-ventas.module').then( m => m.RegistroVentasPageModule)
   },
-
+  {
+    path: 'registro-usuario', // Ruta para la página de Registro de Usuario
+    loadChildren: () => import('./registro-usuario/registro-usuario.module').then( m => m.RegistroUsuarioPageModule)
+  },
 ];
 
 @NgModule({
