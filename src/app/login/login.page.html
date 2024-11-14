@@ -45,6 +45,7 @@
             ></ion-checkbox>
           </ion-item>
 
+          <!-- Botón de Ingresar -->
           <ion-button
             expand="full"
             type="submit"
@@ -53,6 +54,16 @@
             shape="round"
           >
             Ingresar
+          </ion-button>
+
+          <!-- Botón de Crear cuenta -->
+          <ion-button
+            expand="full"
+            color="secondary"
+            shape="round"
+            (click)="goToRegister()"
+          >
+            Crear cuenta
           </ion-button>
         </form>
       </ion-card-content>
@@ -91,6 +102,4 @@
   .black-text {
     --color: black;
   }
-
-
 </style>

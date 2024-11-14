@@ -1,0 +1,35 @@
+ion-content {
+    --background: var(--ion-color-fondo); // Fondo de la página en color "fondo"
+    color: var(--ion-color-dark); // Texto oscuro en la página
+  }
+  
+  .content-wrapper {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px; // Espaciado entre campos
+  }
+  
+  label {
+    color: var(--ion-color-dark); // Color oscuro para las etiquetas
+  }
+  
+  input {
+    width: 100%; // Ancho completo
+    padding: 10px; // Espaciado interno
+    border: 1px solid var(--ion-color-dark); // Borde oscuro
+    border-radius: 5px; // Bordes redondeados
+    background-color: var(--ion-color-fondo); // Fondo del input en color "fondo"
+    color: var(--ion-color-dark); // Color de texto dentro del input
+    font-size: 16px; // Tamaño de fuente
+  }
+  
+  input::placeholder {
+    color: var(--ion-color-dark); // Color del placeholder en oscuro
+  }
+  
+  .button-group {
+    margin: 20px 0;
+  }
+  

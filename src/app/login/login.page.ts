@@ -40,4 +40,9 @@ export class LoginPage implements OnInit {
   togglePasswordVisibility(event: any) {
     this.passwordType = event.detail.checked ? 'text' : 'password';
   }
+
+  // Método para redirigir a la página de registro de usuario
+  goToRegister() {
+    this.router.navigate(['/registro-usuario']);
+  }
 }

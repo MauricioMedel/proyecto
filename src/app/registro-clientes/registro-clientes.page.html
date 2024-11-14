@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="cancelRegistration()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Registro Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
+  <div style="padding: 20px;">
+
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" [(ngModel)]="nombreCliente" />
+    </div>
+
+    <div class="form-group">
+      <label>Apellido Paterno</label>
+      <input type="text" [(ngModel)]="apellidoPaternoCliente"  />
+    </div>
+
+    <div class="form-group">
+      <label>Apellido Materno</label>
+      <input type="text" [(ngModel)]="apellidoMaternoCliente"  />
+    </div>
+
+    <div class="form-group">
+      <label>Rfc</label>
+      <input type="text" [(ngModel)]="apellidoMaternoCliente"  />
+    </div>
+
+    <div class="form-group">
+      <label>Dirección (Calle y número)</label>
+      <input type="text" [(ngModel)]="direccionCliente"  />
+    </div>
+
+    <div class="form-group">
+      <label>Ciudad</label>
+      <input type="text" [(ngModel)]="ciudadCliente"  />
+    </div>
+
+    <div class="form-group">
+      <label>Estado</label>
+      <input type="text" [(ngModel)]="estadoCliente"  />
+    </div>
+
+    <div class="form-group">
+      <label>Código Postal</label>
+      <input type="number" [(ngModel)]="codigoPostalCliente"  />
+    </div>
+
+    <div class="form-group">
+      <label>Número de Teléfono</label>
+      <input type="number" [(ngModel)]="telefonoCliente"  />
+    </div>
+
+    <div class="form-group">
+      <label>Correo Electrónico</label>
+      <input type="email" [(ngModel)]="emailCliente"  />
+    </div>
+
+    <div style="margin: 20px 0;">
+      <ion-button expand="block" color="primary" (click)="registrarCliente()">Registrar</ion-button>
+      <ion-button expand="block" color="danger" (click)="cancelRegistration()">Cancelar</ion-button>
+    </div>
+    
+  </div>
+</ion-content>
