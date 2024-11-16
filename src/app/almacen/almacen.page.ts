@@ -14,6 +14,9 @@ export class AlmacenPage {
     // Añade más productos según sea necesario
   ];
 
+  searchText: string = ''; // Texto de búsqueda
+  filteredProductos = [...this.productos]; // Productos filtrados
+
   // Inyecta NavController en el constructor
   constructor(private navCtrl: NavController) {}
 
@@ -30,5 +33,12 @@ export class AlmacenPage {
   // Método para alternar la visualización de detalles del producto
   toggleDetalles(index: number) {
     this.productos[index].mostrandoDetalles = !this.productos[index].mostrandoDetalles;
+  }
+
+  filterProductos() {
+    const searchTextLower = this.searchText.toLowerCase();
+    this.filteredProductos = this.productos.filter(producto =>
+      producto.nombre.toLowerCase().includes(searchTextLower)
+    );
   }
 }

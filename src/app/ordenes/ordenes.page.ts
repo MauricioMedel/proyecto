@@ -27,6 +27,9 @@ export class OrdenesPage {
     }
   ];
 
+  filteredOrdenes = [...this.ordenes]; // Copia de la lista original para filtrar
+  searchText: string = ''; // Texto de búsqueda
+
   constructor(private router: Router) { }
 
   // Método para regresar a Home
@@ -37,5 +40,12 @@ export class OrdenesPage {
   // Método para navegar al registro de proveedor (si lo necesitas)
   navigateToAgregarOrden() {
     this.router.navigate(['/generar-orden']);
+  }
+
+  filterOrdenes() {
+    const searchTextLower = this.searchText.toLowerCase();
+    this.filteredOrdenes = this.ordenes.filter(orden => 
+      orden.proveedor.toLowerCase().includes(searchTextLower)
+    );
   }
 }
