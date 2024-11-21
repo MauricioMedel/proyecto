@@ -23,7 +23,6 @@
     <ion-card-content style="color: var(--ion-color-dark);">
       <ion-button expand="full" (click)="toggleDetails(cliente)">Detalles</ion-button>
 
-      <!-- Información adicional, inicialmente oculta -->
       <div *ngIf="cliente.showDetails" style="margin-top: 10px;">
         <p><strong>ID:</strong> {{ cliente.id }}</p>
         <p><strong>Calle:</strong> {{ cliente.calle }}</p>
@@ -38,7 +37,6 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- Botón flotante (FAB) para registrar un cliente nuevo -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="navigateToRegistroCliente()">
       <ion-icon name="add"></ion-icon>
