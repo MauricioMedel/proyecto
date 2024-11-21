@@ -35,14 +35,10 @@ export class ListaProveedoresPage implements OnInit {
     // Otros proveedores...
   ];
 
-<<<<<<< HEAD
-  constructor(private router: Router, private alertController: AlertController) { }
-=======
   filteredProveedores: Proveedor[] = [...this.proveedores];
   searchText: string = '';
 
-  constructor(private router: Router) { }
->>>>>>> 98bef5e9e78aa9a49971f8bc81f2cf2702d1dccc
+  constructor(private router: Router, private alertController: AlertController) { }
 
   ngOnInit() {}
 
@@ -96,5 +92,4 @@ export class ListaProveedoresPage implements OnInit {
       proveedor.nombre.toLowerCase().includes(searchTextLower)
     );
   }
-
 }

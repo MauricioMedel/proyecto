@@ -12,26 +12,63 @@
 <ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
   <div style="padding: 20px;">
 
+    <!-- Buscador de Productos -->
     <div class="form-group">
-      <label>Nombre del Producto</label>
-      <input type="text" [(ngModel)]="nombreProducto" placeholder="" />
+      <label>Buscar Producto</label>
+      <ion-input 
+        [(ngModel)]="nombreProducto" 
+        (ionInput)="buscarProducto()" 
+        debounce="500" 
+        placeholder="Buscar producto"
+        clearInput
+        style="background-color: #ffffff; color: #000000;">
+      </ion-input>
+
+      <!-- Lista de productos encontrados -->
+      <ion-list *ngIf="productosEncontrados.length > 0" class="producto-list">
+        <ion-item *ngFor="let producto of productosEncontrados" (click)="seleccionarProducto(producto)">
+          <ion-label>
+            {{ producto.nombre }} - {{ producto.precio | currency }}
+          </ion-label>
+        </ion-item>
+      </ion-list>
     </div>
 
     <div class="form-group">
       <label>Cantidad</label>
-      <input type="number" [(ngModel)]="cantidad" placeholder="" />
+      <input type="number" [(ngModel)]="cantidad" placeholder="Cantidad" style="background-color: #ffffff; color: #000000;" />
     </div>
     
     <div class="form-group">
       <label>Precio de Venta</label>
-      <input type="number" [(ngModel)]="precioVenta" placeholder="" />
+      <input type="number" [(ngModel)]="precioVenta" placeholder="Precio de venta" readonly style="background-color: #ffffff; color: #000000;" />
+    </div>
+
+    <div class="form-group">
+      <label>Fecha de Compra</label>
+      <input type="text" [(ngModel)]="fechaCompra" placeholder="Fecha de compra" readonly style="background-color: #ffffff; color: #000000;" />
+    </div>
+
+    <ion-button expand="block" color="primary" (click)="agregarProducto()">Agregar Producto</ion-button>
+
+    <div *ngIf="productos.length > 0" style="margin-top: 20px;">
+      <ion-list>
+        <ion-item *ngFor="let producto of productos">
+          <ion-label>
+            {{producto.nombre}} - {{producto.cantidad}} x {{producto.precioVenta | currency}} 
+            = {{producto.subtotal | currency}} (Fecha: {{producto.fechaCompra}})
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <div style="font-weight: bold; text-align: right; margin-top: 10px;">
+        Total: {{total | currency}}
+      </div>
     </div>
 
     <div style="margin: 20px 0;">
-      <ion-button expand="block" color="primary" (click)="registrarProducto()">Registrar</ion-button>
+      <ion-button expand="block" color="primary" (click)="registrarVenta()">Registrar Venta</ion-button>
       <ion-button expand="block" color="danger" (click)="cancelRegistration()">Cancelar</ion-button>
     </div>
-    
+
   </div>
 </ion-content>
-
