@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 interface Proveedor {
   id: number;
@@ -31,56 +32,12 @@ export class ListaProveedoresPage implements OnInit {
       telefono: '555-1234',
       showDetails: false
     },
-    {
-      id: 2,
-      nombre: 'María',
-      apellidoPaterno: 'López',
-      apellidoMaterno: 'Hernández',
-      calle: 'Calle Secundaria 456',
-      estado: 'Estado 2',
-      codigoPostal: '67890',
-      telefono: '555-5678',
-      showDetails: false
-    },
-    {
-      id: 3,
-      nombre: 'Carlos',
-      apellidoPaterno: 'Ramírez',
-      apellidoMaterno: 'Martínez',
-      calle: 'Calle Tercera 789',
-      estado: 'Estado 3',
-      codigoPostal: '54321',
-      telefono: '555-8765',
-      showDetails: false
-    },
-    {
-      id: 4,
-      nombre: 'Ana',
-      apellidoPaterno: 'Torres',
-      apellidoMaterno: 'González',
-      calle: 'Calle Cuarta 321',
-      estado: 'Estado 4',
-      codigoPostal: '09876',
-      telefono: '555-4321',
-      showDetails: false
-    },
-    {
-      id: 5,
-      nombre: 'Pedro',
-      apellidoPaterno: 'Jiménez',
-      apellidoMaterno: 'Sánchez',
-      calle: 'Calle Quinta 654',
-      estado: 'Estado 5',
-      codigoPostal: '11223',
-      telefono: '555-6789',
-      showDetails: false
-    }
+    // Otros proveedores...
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private alertController: AlertController) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   regresar() {
     this.router.navigate(['/home']);
@@ -91,6 +48,38 @@ export class ListaProveedoresPage implements OnInit {
   }
 
   toggleDetails(proveedor: Proveedor) {
-    proveedor.showDetails = !proveedor.showDetails; // Alternar la visibilidad
+    proveedor.showDetails = !proveedor.showDetails;
+  }
+
+  async eliminarProveedor(proveedor: Proveedor) {
+    const alert = await this.alertController.create({
+      header: 'Confirmar eliminación',
+      message: `¿Estás seguro de que deseas eliminar a ${proveedor.nombre}?`,
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Eliminación cancelada');
+          }
+        },
+        {
+          text: 'Eliminar',
+          handler: () => {
+            this.proveedores = this.proveedores.filter(p => p.id !== proveedor.id);
+            console.log(`Proveedor ${proveedor.nombre} eliminado.`);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  actualizarProveedor(proveedor: Proveedor) {
+    this.router.navigate(['/registro-proveedor'], {
+      queryParams: { id: proveedor.id }
+    });
   }
 }

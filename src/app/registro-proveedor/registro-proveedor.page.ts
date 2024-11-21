@@ -9,14 +9,16 @@ import { AlertController } from '@ionic/angular';
 })
 export class RegistroProveedorPage implements OnInit {
 
-  nombre: string = '';
-  apellidoPaterno: string = '';
-  apellidoMaterno: string = '';
+  nombres: string = '';
+  apellidos: string = '';
+  rfc: string = '';
+  telefono: string = '';
+  email: string = '';
   calle: string = '';
+  colonia: string = '';
+  codigoPostal: string = '';
   municipio: string = '';
   estado: string = '';
-  codigoPostal: string = '';
-  numeroTelefono: string = '';
   formSubmitted: boolean = false;
 
   constructor(
@@ -72,20 +74,22 @@ export class RegistroProveedorPage implements OnInit {
   }
 
   limpiarFormulario() {
-    this.nombre = '';
-    this.apellidoPaterno = '';
-    this.apellidoMaterno = '';
+    this.nombres = '';
+    this.apellidos = '';
+    this.rfc = '';
+    this.telefono = '';
+    this.email = '';
     this.calle = '';
+    this.colonia = '';
+    this.codigoPostal = '';
     this.municipio = '';
     this.estado = '';
-    this.codigoPostal = '';
-    this.numeroTelefono = '';
     this.formSubmitted = false;
   }
 
   validarFormulario() {
-    return this.nombre && this.apellidoPaterno && this.apellidoMaterno &&
-           this.calle && this.municipio && this.estado &&
-           this.codigoPostal && this.numeroTelefono;
+    return this.nombres && this.apellidos && this.rfc &&
+           this.telefono && this.email && this.calle &&
+           this.colonia && this.codigoPostal && this.municipio && this.estado;
   }
 }

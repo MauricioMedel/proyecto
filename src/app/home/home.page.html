@@ -1,7 +1,7 @@
 <ion-app>
   <div class="ion-page" id="main-content">
     <ion-header>
-      <ion-toolbar color="primary"> 
+      <ion-toolbar color="primary">
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
@@ -14,7 +14,7 @@
       <div class="cards-container-horizontal">
         <ion-card class="custom-card" (click)="goToVentas()">
           <ion-card-header>
-            <ion-card-title>Ventas</ion-card-title>
+            <ion-card-title>Historial de ventas</ion-card-title>
           </ion-card-header>
         </ion-card>
 
@@ -25,7 +25,7 @@
         </ion-card>
       </div>
 
-      <!-- Tarjetas de Venta de Producto y Generar Orden (una debajo de la otra) -->
+      <!-- Tarjetas de Venta de Producto y Generar Orden -->
       <div class="cards-container-vertical">
         <ion-card class="custom-card" (click)="goToVentaProducto()">
           <ion-card-header>
@@ -36,6 +36,21 @@
         <ion-card class="custom-card" (click)="goToGenerarOrden()">
           <ion-card-header>
             <ion-card-title>Generar Orden de Compra</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </div>
+
+      <!-- Tarjetas de Productos en Almacén y Clientes -->
+      <div class="cards-container-vertical">
+        <ion-card class="custom-card" (click)="goToAlmacen()">
+          <ion-card-header>
+            <ion-card-title>Productos en Almacén</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+
+        <ion-card class="custom-card" (click)="goToClientes()">
+          <ion-card-header>
+            <ion-card-title>Clientes</ion-card-title>
           </ion-card-header>
         </ion-card>
       </div>

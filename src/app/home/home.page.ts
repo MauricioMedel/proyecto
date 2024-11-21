@@ -25,4 +25,14 @@ export class HomePage {
   goToGenerarOrden() {
     this.router.navigate(['/generar-orden']);
   }
+
+  goToAlmacen() {
+    this.router.navigate(['/almacen']);
+  }
+  
+  goToClientes() {
+    this.router.navigate(['/clientes']);
+  }
+  
 }
+

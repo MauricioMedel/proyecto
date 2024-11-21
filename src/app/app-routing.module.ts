@@ -53,28 +53,24 @@ const routes: Routes = [
   },
   {
     path: 'ventas',
-    loadChildren: () => import('./ventas/ventas.module').then( m => m.VentasPageModule)
+    loadChildren: () => import('./ventas/ventas.module').then(m => m.VentasPageModule)
   },
   {
     path: 'registro-ventas',
-    loadChildren: () => import('./registro-ventas/registro-ventas.module').then( m => m.RegistroVentasPageModule)
+    loadChildren: () => import('./registro-ventas/registro-ventas.module').then(m => m.RegistroVentasPageModule)
   },
   {
     path: 'registro-usuario', // Ruta para la página de Registro de Usuario
-    loadChildren: () => import('./registro-usuario/registro-usuario.module').then( m => m.RegistroUsuarioPageModule)
-  },  {
+    loadChildren: () => import('./registro-usuario/registro-usuario.module').then(m => m.RegistroUsuarioPageModule)
+  },
+  {
     path: 'clientes',
-    loadChildren: () => import('./clientes/clientes.module').then( m => m.ClientesPageModule)
+    loadChildren: () => import('./clientes/clientes.module').then(m => m.ClientesPageModule)
   },
   {
     path: 'registro-clientes',
-    loadChildren: () => import('./registro-clientes/registro-clientes.module').then( m => m.RegistroClientesPageModule)
+    loadChildren: () => import('./registro-clientes/registro-clientes.module').then(m => m.RegistroClientesPageModule)
   },
-  {
-    path: 'clientes',
-    loadChildren: () => import('./clientes/clientes.module').then( m => m.ClientesPageModule)
-  },
-
 ];
 
 @NgModule({

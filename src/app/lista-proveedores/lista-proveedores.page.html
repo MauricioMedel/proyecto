@@ -26,6 +26,8 @@
         <p><strong>Estado:</strong> {{ proveedor.estado }}</p>
         <p><strong>Código Postal:</strong> {{ proveedor.codigoPostal }}</p>
         <p><strong>Teléfono:</strong> {{ proveedor.telefono }}</p>
+        <ion-button color="success" (click)="actualizarProveedor(proveedor)">Actualizar datos</ion-button>
+        <ion-button color="danger" (click)="eliminarProveedor(proveedor)">Eliminar</ion-button>
       </div>
     </ion-card-content>
   </ion-card>
