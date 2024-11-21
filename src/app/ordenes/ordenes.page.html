@@ -10,7 +10,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
-  <ion-card *ngFor="let orden of ordenes" style="background-color: var(--ion-color-fondo); margin: 10px;">
+
+  <ion-searchbar [(ngModel)]="searchText" (ionInput)="filterOrdenes()" placeholder="Buscar proveedor"></ion-searchbar>
+
+  <ion-card *ngFor="let orden of filteredOrdenes" style="background-color: var(--ion-color-fondo); margin: 10px;">
     <ion-card-header>
       <ion-card-title style="color: var(--ion-color-dark);">{{ orden.proveedor }}</ion-card-title>
       <ion-card-subtitle style="color: var(--ion-color-dark);">{{ orden.fecha }}</ion-card-subtitle>

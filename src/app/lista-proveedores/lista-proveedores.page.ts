@@ -35,7 +35,14 @@ export class ListaProveedoresPage implements OnInit {
     // Otros proveedores...
   ];
 
+<<<<<<< HEAD
   constructor(private router: Router, private alertController: AlertController) { }
+=======
+  filteredProveedores: Proveedor[] = [...this.proveedores];
+  searchText: string = '';
+
+  constructor(private router: Router) { }
+>>>>>>> 98bef5e9e78aa9a49971f8bc81f2cf2702d1dccc
 
   ngOnInit() {}
 
@@ -82,4 +89,12 @@ export class ListaProveedoresPage implements OnInit {
       queryParams: { id: proveedor.id }
     });
   }
+
+  filterProveedores() {
+    const searchTextLower = this.searchText.toLowerCase();
+    this.filteredProveedores = this.proveedores.filter(proveedor =>
+      proveedor.nombre.toLowerCase().includes(searchTextLower)
+    );
+  }
+
 }
