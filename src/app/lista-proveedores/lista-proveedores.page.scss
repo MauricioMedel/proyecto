@@ -1,4 +1,9 @@
 ion-content {
   --background: var(--ion-color-fondo); /* Asegúrate de que el fondo sea el color "fondo" */
 }
+ion-searchbar {
+  --color: rgb(0, 0, 0); /* Cambia el color del texto a negro */
+  --placeholder-color: gray; /* Cambia el color del texto del placeholder */
+  --background: white; /* Fondo blanco para mayor contraste */
+}
 
