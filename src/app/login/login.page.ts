@@ -25,6 +25,7 @@ export class LoginPage implements OnInit {
     // Simulación de verificación de credenciales (aquí puedes conectar a un servicio backend real)
     if (this.username === 'admin' && this.password === 'admin123') {
       this.router.navigate(['/home']); // Redirigir a la página de inicio o home
+      this.clearFields(); // Limpiar los campos después de redirigir
     } else {
       // Si las credenciales son incorrectas, mostrar una alerta
       const alert = await this.alertController.create({
@@ -45,5 +46,10 @@ export class LoginPage implements OnInit {
   goToRegister() {
     this.router.navigate(['/registro-usuario']);
   }
-}
 
+  // Método para limpiar los campos de usuario y contraseña
+  private clearFields() {
+    this.username = '';
+    this.password = '';
+  }
+}
