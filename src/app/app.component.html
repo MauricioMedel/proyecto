@@ -2,17 +2,40 @@
   <!-- Menú lateral -->
   <ion-menu contentId="main-content">
     <ion-header>
-      <ion-toolbar color="primary"> <!-- Encabezado con color primario -->
-        <ion-title style="color: var(--ion-color-dark);">Opciones</ion-title> <!-- Texto en color oscuro -->
+      <ion-toolbar color="fondo">
+        <ion-title style="color: var(--ion-color-dark);">Mi Perfil</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content style="background-color: var(--ion-color-fondo);"> <!-- Fondo del menú con el color "fondo" -->
+    <ion-content>
       <ion-list>
-        <ion-item class="menu-option" routerLink="/home" (click)="closeMenu()" style="color: var(--ion-color-dark);">Inicio</ion-item>
-        <ion-item class="menu-option" routerLink="/lista-proveedores" (click)="closeMenu()" style="color: var(--ion-color-dark);">Proveedores</ion-item>
-        <ion-item class="menu-option" routerLink="/ordenes" (click)="closeMenu()" style="color: var(--ion-color-dark);">Orden de Compra</ion-item>
-        <ion-item class="menu-option" routerLink="/almacen" (click)="closeMenu()" style="color: var(--ion-color-dark);">Productos</ion-item>
-        <ion-item class="menu-option" routerLink="/ventas" (click)="closeMenu()" style="color: var(--ion-color-dark);">Ventas</ion-item> <!-- Nueva opción de Ventas -->
+        <!-- Nombre de Usuario y Foto -->
+        <ion-item lines="none" style="background-color: var(--ion-color-fondo); color: var(--ion-color-dark);">
+          <ion-icon name="person-circle-outline" slot="start" style="font-size: 30px;"></ion-icon>
+          <ion-label>
+            <h2 style="color: var(--ion-color-dark);">Mauricio Medel de Jesus</h2>
+          </ion-label>
+        </ion-item>
+
+        <!-- Botón para Mis Datos -->
+        <ion-item
+          class="menu-option"
+          lines="full"
+          style="background-color: var(--ion-color-fondo); color: var(--ion-color-dark);"
+        >
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          Mis Datos
+        </ion-item>
+
+        <!-- Botón de Cerrar sesión -->
+        <ion-item
+          class="menu-option"
+          lines="full"
+          style="background-color: var(--ion-color-fondo); color: var(--ion-color-dark);"
+          (click)="logout()"
+        >
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          Cerrar Sesión
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>

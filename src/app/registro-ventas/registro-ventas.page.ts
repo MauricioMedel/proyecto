@@ -17,14 +17,18 @@ export class RegistroVentasPage implements OnInit {
   productosEncontrados: any[] = [];
   total: number = 0;
   
-  // Simulación de productos disponibles en el sistema
+  // Lista de productos disponibles en el sistema
   listaProductos = [
-    { nombre: 'Producto A', precio: 100 },
-    { nombre: 'Producto B', precio: 150 },
-    { nombre: 'Producto C', precio: 200 },
-    { nombre: 'Producto D', precio: 120 },
-    { nombre: 'Producto E', precio: 180 },
-    // Agrega más productos según sea necesario
+    { nombre: 'Paracetamol 500mg', precio: 20 },
+    { nombre: 'Electrolyte', precio: 30 },
+    { nombre: 'Suerox', precio: 40 },
+    { nombre: 'Coca Cola 600ml', precio: 20 },
+    { nombre: 'Vendas', precio: 30 },
+    { nombre: 'Ibuprofeno 400mg', precio: 30 },
+    { nombre: 'Paquete de pañales (Huggies)', precio: 150 },
+    { nombre: 'Jeringas', precio: 17.5 }, // Precio por unidad
+    { nombre: 'Jarabe para la tos', precio: 75 },
+    { nombre: 'Cajas de curitas', precio: 125 },
   ];
 
   constructor(
@@ -90,7 +94,7 @@ export class RegistroVentasPage implements OnInit {
 
     const alert = await this.alertController.create({
       header: 'Venta registrada',
-      message: `Venta registrada correctamente. Total: ${this.total}`,
+      message: `Venta registrada correctamente. Total: $${this.total.toFixed(2)}`,
       buttons: ['OK']
     });
 

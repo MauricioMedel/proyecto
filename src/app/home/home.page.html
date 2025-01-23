@@ -11,49 +11,53 @@
     <ion-content style="background-color: var(--ion-color-fondo);">
 
       <!-- Tarjetas de Ventas y Compras -->
-      <div class="cards-container-horizontal">
+      <div class="cards-container">
         <ion-card class="custom-card" (click)="goToVentas()">
           <ion-card-header>
-            <ion-card-title>Historial de ventas</ion-card-title>
+            <ion-card-title>Ventas</ion-card-title>
           </ion-card-header>
+          <ion-card-content>
+            <ion-icon name="cash-outline" class="icon-style"></ion-icon>
+          </ion-card-content>
         </ion-card>
 
         <ion-card class="custom-card" (click)="goToCompras()">
           <ion-card-header>
             <ion-card-title>Compras</ion-card-title>
           </ion-card-header>
-        </ion-card>
-      </div>
-
-      <!-- Tarjetas de Venta de Producto y Generar Orden -->
-      <div class="cards-container-vertical">
-        <ion-card class="custom-card" (click)="goToVentaProducto()">
-          <ion-card-header>
-            <ion-card-title>Venta de Producto</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-
-        <ion-card class="custom-card" (click)="goToGenerarOrden()">
-          <ion-card-header>
-            <ion-card-title>Generar Orden de Compra</ion-card-title>
-          </ion-card-header>
+          <ion-card-content>
+            <ion-icon name="cart-outline" class="icon-style"></ion-icon>
+          </ion-card-content>
         </ion-card>
       </div>
 
       <!-- Tarjetas de Productos en Almacén y Clientes -->
-      <div class="cards-container-vertical">
+      <div class="cards-container">
         <ion-card class="custom-card" (click)="goToAlmacen()">
           <ion-card-header>
             <ion-card-title>Productos en Almacén</ion-card-title>
           </ion-card-header>
+          <ion-card-content>
+            <ion-icon name="cube-outline" class="icon-style"></ion-icon>
+          </ion-card-content>
         </ion-card>
 
         <ion-card class="custom-card" (click)="goToClientes()">
           <ion-card-header>
             <ion-card-title>Clientes</ion-card-title>
           </ion-card-header>
+          <ion-card-content>
+            <ion-icon name="people-outline" class="icon-style"></ion-icon>
+          </ion-card-content>
         </ion-card>
       </div>
+
+      <!-- Gráfico de Productos Más Vendidos -->
+      <div class="stats-container">
+        <h2 class="stats-title">Productos Más Vendidos</h2>
+        <canvas id="ventasChart"></canvas>
+      </div>
+
     </ion-content>
   </div>
 </ion-app>

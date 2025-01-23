@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController } from '@ionic/angular'; // Importa MenuController
+import { MenuController, NavController } from '@ionic/angular'; // Importamos MenuController y NavController
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,18 @@ import { MenuController } from '@ionic/angular'; // Importa MenuController
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private menu: MenuController) {} // Inyecta MenuController
+  constructor(private menu: MenuController, private navCtrl: NavController) {}
 
   closeMenu() {
     this.menu.close(); // Método para cerrar el menú
+  }
+
+  // Método para cerrar sesión
+  logout() {
+    // Cierra el menú primero
+    this.menu.close();
+
+    // Redirige al login
+    this.navCtrl.navigateRoot('/login');
   }
 }

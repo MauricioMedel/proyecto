@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { AuthService } from '../services/auth.service';  // Asegúrate de que esta ruta sea correcta
 
 @Component({
   selector: 'app-login',
@@ -16,40 +15,25 @@ export class LoginPage implements OnInit {
 
   constructor(
     private router: Router, // Servicio de navegación para redirigir al dashboard
-    private alertController: AlertController, // Servicio para mostrar alertas
-    private authService: AuthService // Servicio de autenticación
+    private alertController: AlertController // Servicio para mostrar alertas
   ) { }
 
   ngOnInit() { }
 
   // Método para manejar el envío del formulario de inicio de sesión
   async onSubmit() {
-    const credentials = { email: this.username, password: this.password };
-    
-    // Llamada al servicio de autenticación para hacer login
-    this.authService.login(credentials).subscribe({
-      next: async (response) => {
-        if (response && response.token) {
-          // Si la respuesta es correcta, redirigir a la página principal
-          this.router.navigate(['/home']);
-        } else {
-          const alert = await this.alertController.create({
-            header: 'Error',
-            message: 'Usuario o contraseña incorrectos',
-            buttons: ['OK'],
-          });
-          await alert.present(); // Mostrar la alerta
-        }
-      },
-      error: async (err) => {
-        const alert = await this.alertController.create({
-          header: 'Error',
-          message: 'Hubo un problema al intentar iniciar sesión',
-          buttons: ['OK'],
-        });
-        await alert.present(); // Mostrar la alerta de error
-      }
-    });
+    // Simulación de verificación de credenciales (aquí puedes conectar a un servicio backend real)
+    if (this.username === 'admin' && this.password === 'admin123') {
+      this.router.navigate(['/home']); // Redirigir a la página de inicio o home
+    } else {
+      // Si las credenciales son incorrectas, mostrar una alerta
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Usuario o contraseña incorrectos',
+        buttons: ['OK'],
+      });
+      await alert.present(); // Mostrar la alerta
+    }
   }
 
   // Método para alternar la visibilidad de la contraseña
@@ -62,3 +46,4 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/registro-usuario']);
   }
 }
+

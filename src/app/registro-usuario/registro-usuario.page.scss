@@ -32,4 +32,20 @@ ion-content {
   .button-group {
     margin: 20px 0;
   }
+
+  textarea {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000; /* Texto negro */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de letra */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    box-sizing: border-box; /* Incluye padding y borde dentro del ancho */
+  }
+  
+  textarea::placeholder {
+    color: #888888; /* Color del texto del placeholder */
+    font-style: italic; /* Placeholder en cursiva */
+  }
   

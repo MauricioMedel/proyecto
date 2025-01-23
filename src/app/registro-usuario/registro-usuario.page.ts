@@ -13,14 +13,10 @@ export class RegistroUsuarioPage implements OnInit {
   nombre: string = '';
   apellidoPaterno: string = '';
   apellidoMaterno: string = '';
-  calle: string = '';
-  municipio: string = '';
-  estado: string = '';
-  codigoPostal: number | null = null;
-  telefono: number | null = null;
   email: string = '';
   usuario: string = '';
   password: string = '';
+  domicilio: string = ''; // Se agregó esta propiedad para evitar el error
 
   constructor(
     private router: Router,
@@ -33,12 +29,12 @@ export class RegistroUsuarioPage implements OnInit {
   // Método para registrar el usuario
   async registrarUsuario() {
     // Verificar que todos los campos están completos
-    if (this.nombre && this.apellidoPaterno && this.email && this.usuario && this.password) {
-      console.log('Usuario registrado:', this.nombre, this.apellidoPaterno, this.email);
+    if (this.nombre && this.apellidoPaterno && this.email && this.usuario && this.password && this.domicilio) {
+      console.log('Usuario registrado:', this.nombre, this.apellidoPaterno, this.email, this.domicilio);
 
       // Mostrar el toast con el mensaje de "Usuario registrado"
       const toast = await this.toastController.create({
-        message: 'Usuario registrado',
+        message: 'Usuario registrado correctamente',
         duration: 2000, // Duración de 2 segundos
         position: 'top' // Ubicación del toast en la pantalla
       });
@@ -99,13 +95,9 @@ export class RegistroUsuarioPage implements OnInit {
     this.nombre = '';
     this.apellidoPaterno = '';
     this.apellidoMaterno = '';
-    this.calle = '';
-    this.municipio = '';
-    this.estado = '';
-    this.codigoPostal = null;
-    this.telefono = null;
     this.email = '';
     this.usuario = '';
     this.password = '';
+    this.domicilio = ''; // Limpieza del nuevo campo domicilio
   }
 }

@@ -5,62 +5,60 @@
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Registro Usuario</ion-title>
+    <ion-title>Crear cuenta</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="content-wrapper">
 
+    <!-- Campo de Nombre -->
     <div class="form-group">
-      <label>Nombre(s)</label>
-      <input type="text" [(ngModel)]="nombre" placeholder="" />
+      <label>Nombre</label>
+      <input type="text" [(ngModel)]="nombre" placeholder="Escribe tu nombre" />
     </div>
 
+    <!-- Campo de Apellido Paterno -->
     <div class="form-group">
       <label>Apellido Paterno</label>
-      <input type="text" [(ngModel)]="apellidoPaterno" placeholder="" />
+      <input type="text" [(ngModel)]="apellidoPaterno" placeholder="Escribe tu apellido paterno" />
     </div>
 
+    <!-- Campo de Apellido Materno -->
     <div class="form-group">
       <label>Apellido Materno</label>
-      <input type="text" [(ngModel)]="apellidoMaterno" placeholder="" />
+      <input type="text" [(ngModel)]="apellidoMaterno" placeholder="Escribe tu apellido materno" />
     </div>
 
+    <!-- Campo de Email -->
     <div class="form-group">
       <label>Email</label>
-      <input type="email" [(ngModel)]="email" placeholder="" />
+      <input type="email" [(ngModel)]="email" placeholder="Escribe tu correo electrónico" />
     </div>
 
+    <!-- Campo de Usuario -->
     <div class="form-group">
       <label>Usuario</label>
-      <input type="text" [(ngModel)]="usuario" placeholder="" />
+      <input type="text" [(ngModel)]="usuario" placeholder="Elige tu nombre de usuario" />
     </div>
 
+    <!-- Campo de Contraseña -->
     <div class="form-group">
       <label>Contraseña</label>
-      <input type="password" [(ngModel)]="password" placeholder="" />
+      <input type="password" [(ngModel)]="password" placeholder="Crea una contraseña segura" />
     </div>
 
+    <!-- Campo de Domicilio -->
     <div class="form-group">
-      <label>Código Postal</label>
-      <input type="number" [(ngModel)]="codigoPostal" placeholder="" />
+      <label>Domicilio</label>
+      <textarea [(ngModel)]="domicilio" rows="3" placeholder="Escribe tu domicilio completo"></textarea>
     </div>
 
-    <div class="form-group">
-      <label>Municipio</label>
-      <input type="text" [(ngModel)]="municipio" placeholder="" />
-    </div>
-
-    <div class="form-group">
-      <label>Estado</label>
-      <input type="text" [(ngModel)]="estado" placeholder="" />
-    </div>
-
+    <!-- Botones de acción -->
     <div class="button-group">
-      <ion-button expand="block" color="primary" (click)="registrarUsuario()">Registrar</ion-button>
+      <ion-button expand="block" color="primary" (click)="registrarUsuario()">Crear</ion-button>
       <ion-button expand="block" color="danger" (click)="cancelRegistration()">Cancelar</ion-button>
     </div>
-    
+
   </div>
 </ion-content>

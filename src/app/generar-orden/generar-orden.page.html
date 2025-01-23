@@ -12,19 +12,23 @@
 <ion-content [fullscreen]="true" style="background-color: var(--ion-color-fondo);">
   <div style="padding: 20px;">
 
-    <!-- Fecha de creación -->
+    <!-- Empleado que hace la orden -->
     <div class="form-group">
-      <label class="dark-label">Fecha de Creación</label>
-      <ion-datetime
-        [(ngModel)]="fechaCreacion"
-        [min]="fechaMinima"
-        [max]="fechaMaxima"
-        presentation="date"
-        disabled>
-      </ion-datetime>
+      <label class="dark-label">Empleado</label>
+      <input type="text" [(ngModel)]="empleado" placeholder="Nombre del empleado" disabled />
     </div>
 
-    <!-- Descripción -->
+  
+
+    <!-- Proveedor -->
+    <div class="form-group">
+      <label class="dark-label">Proveedor</label>
+      <select [(ngModel)]="proveedor" class="form-control">
+        <option *ngFor="let proveedor of proveedores" [value]="proveedor">{{ proveedor }}</option>
+      </select>
+    </div>
+
+    <!-- Descripción del Producto -->
     <div class="form-group">
       <label class="dark-label">Descripción</label>
       <input type="text" [(ngModel)]="descripcion" placeholder="Descripción del producto" />
@@ -38,7 +42,7 @@
 
     <!-- Precio -->
     <div class="form-group">
-      <label class="dark-label">Precio</label>
+      <label class="dark-label">Precio unitario</label>
       <input type="number" [(ngModel)]="precio" min="0.01" step="0.01" placeholder="Precio" />
     </div>
 
@@ -54,7 +58,7 @@
         <ion-item *ngFor="let producto of productos; let i = index">
           <ion-label>
             <h3>{{ producto.descripcion }}</h3>
-            <p>Cantidad: {{ producto.cantidad }} - Precio: ${{ producto.precio }}</p>
+            <p>Cantidad: {{ producto.cantidad }} - Precio: ${{ producto.precio }} - Subtotal: ${{ producto.subtotal }}</p>
           </ion-label>
           <ion-button fill="clear" color="danger" (click)="eliminarProducto(i)">
             <ion-icon name="trash"></ion-icon>
@@ -62,7 +66,22 @@
         </ion-item>
       </ion-list>
     </div>
-    
+
+    <!-- Total y IVA -->
+    <div class="form-group">
+      <label class="dark-label">Total sin IVA</label>
+      <input type="text" [value]="total" disabled />
+    </div>
+
+    <div class="form-group">
+      <label class="dark-label">IVA (16%)</label>
+      <input type="text" [value]="iva" disabled />
+    </div>
+
+    <div class="form-group">
+      <label class="dark-label">Total con IVA</label>
+      <input type="text" [value]="totalConIva" disabled />
+    </div>
 
     <!-- Botones de Registrar y Cancelar -->
     <div style="margin: 20px 0;">
